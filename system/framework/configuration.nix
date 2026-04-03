@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ./network.nix
     ./twingate.nix
+    ./fingerprint.nix
     ../common/common.nix
   ];
 
@@ -54,9 +55,6 @@
   # Firmware updates (fwupd)
   services.fwupd.enable = true;
 
-  # Fingerprint reader (Framework)
-  services.fprintd.enable = true;
-
   # System packages (core tools only — dev tools go in home-manager)
   environment.systemPackages = with pkgs; [
     curl
@@ -70,7 +68,6 @@
     unzip
     wget
   ];
-
 
   environment.localBinInPath = true;
 
