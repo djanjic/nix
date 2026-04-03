@@ -1,0 +1,25 @@
+# Mouse scroll multiplier - too aggressive out of the box
+mouse-scroll-multiplier = 0.5
+
+# Background and transparency settings
+background = #282a36
+background-opacity = 0.8
+
+# Cursor & Mouse
+cursor-style = block
+cursor-style-blink = false
+cursor-opacity = 1
+mouse-hide-while-typing = true
+
+shell-integration = zsh
+font-family = JetBrainsMono Nerd Font
+font-size = 12
+theme = Dracula
+scrollback-limit = 10000000
+
+keybind = ctrl+n=new_window
+
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+
+window-save-state = always
