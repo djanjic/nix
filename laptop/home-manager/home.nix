@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 
-in
 {
   #imports = [
   #  ../../home-manager/git.nix
