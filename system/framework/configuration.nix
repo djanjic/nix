@@ -64,7 +64,7 @@
     htop
     jq
     lsof
-    lsusb
+    usbutils
     tree
     unzip
     wget
