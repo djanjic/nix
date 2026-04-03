@@ -68,9 +68,13 @@
     tree
     unzip
     wget
+    twingate
     #zoxide
     #cifs-utils
   ];
+
+  # Enable twingate
+  services.twingate.enable = true;
 
   environment.localBinInPath = true;
 
