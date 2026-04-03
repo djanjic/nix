@@ -6,7 +6,7 @@
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
   #  ../../home-manager/tmux.nix
-    ./shell.nix
+   # ./shell.nix
   ];
 
   home.username = "darko";
