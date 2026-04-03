@@ -8,7 +8,7 @@
       ./locale.nix
       ./podman.nix
       ./printing.nix
-      ./network.nix
+      #./network.nix
       ./sound.nix
       ./tlp.nix
       #./zsh.nix
