@@ -76,17 +76,6 @@ in
 
   programs.home-manager.enable = true;
 
-  dconf.settings = {
-    "org/gnome/shell" = {
-      favorite-apps = [
-        "firefox.desktop"
-        "code.desktop"
-        "com.mitchellh.ghostty.desktop"
-      ];
-    };
-  };
-
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
