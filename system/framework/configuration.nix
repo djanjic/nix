@@ -73,7 +73,7 @@
 
   # Enable bolt for thunderbolt management
   services.hardware.bolt.enable = true;
-  services.fprintd.enable = true;
+
   # Enable Gnome
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
