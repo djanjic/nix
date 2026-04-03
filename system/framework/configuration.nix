@@ -5,6 +5,7 @@
     <nixos-hardware/framework/13-inch/amd-ai-300-series>
     ./hardware-configuration.nix
     ./network.nix
+    ./twingate.nix
     ../common/common.nix
   ];
 
