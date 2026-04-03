@@ -6,7 +6,6 @@
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
   #  ../../home-manager/tmux.nix
-   # ./shell.nix
   ];
 
   home.username = "darko";
@@ -66,6 +65,7 @@
     "org/gnome/shell" = {
       favorite-apps = [
         "firefox.desktop"
+        "slack.desktop"
         "code.desktop"
         "com.mitchellh.ghostty.desktop"
       ];

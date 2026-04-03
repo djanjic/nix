@@ -3,7 +3,7 @@ mouse-scroll-multiplier = 0.5
 
 # Background and transparency settings
 background = #282a36
-background-opacity = 0.8
+background-opacity = 1
 
 # Cursor & Mouse
 cursor-style = block
