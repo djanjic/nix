@@ -77,6 +77,11 @@
   # Enable bolt for thunderbolt management
   services.hardware.bolt.enable = true;
 
+  # Enable Gnome
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   # Dynamic linking support (needed for non-nix binaries and VS Code extensions)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
