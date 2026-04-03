@@ -1,12 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-  #imports = [
+  imports = [
   #  ../../home-manager/git.nix
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
   #  ../../home-manager/tmux.nix
-  #];
+    ./shell.nix
+  ];
 
   home.username = "darko";
   home.homeDirectory = "/home/darko";
