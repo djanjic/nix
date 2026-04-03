@@ -64,6 +64,7 @@
     htop
     jq
     lsof
+    lsusb
     tree
     unzip
     wget
