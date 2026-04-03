@@ -51,6 +51,8 @@
     pwvucontrol
     _1password-gui
     vscode.fhs
+    zoom-us
+    steam
   ];
 
   home.file.".config/ghostty/config".source = ../../home-manager/dotfiles/ghostty/config;
