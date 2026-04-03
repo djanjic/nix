@@ -18,4 +18,4 @@
     LC_TELEPHONE = "en_RS.UTF-8";
     LC_TIME = "en_RS.UTF-8";
   };
-};
+}
