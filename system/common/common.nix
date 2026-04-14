@@ -6,7 +6,7 @@
       ./darko.nix
       ./bluetooth.nix
       ./locale.nix
-      ./podman.nix
+      ./docker.nix
       ./printing.nix
       ./sound.nix
       #./tlp.nix

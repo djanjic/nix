@@ -41,8 +41,8 @@
     kubectl
 
     # Containers
-    podman
-    podman-compose
+    docker
+    docker-compose
 
     # GUI applications
     firefox

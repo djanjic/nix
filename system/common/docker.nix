@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # Podman (rootless containers with Docker compat)
-  virtualisation.podman = {
+  # Docker
+  virtualisation.docker = {
     enable = true;
-    dockerCompat = true;        # alias docker -> podman
-    dockerSocket.enable = true; # emulate Docker socket for tools that need it
-    defaultNetwork.settings.dns_enabled = true;
   };
 
-  users.extraGroups.podman.members = [ "darko" ];
+  users.extraGroups.docker.members = [ "darko" ];
 }
