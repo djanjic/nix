@@ -21,9 +21,6 @@
       [ -e "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ] && . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
       export PATH="/usr/local/bin:$PATH"
-      export EDITOR="nvim"
-      export VISUAL="nvim"
-      export RTK_TELEMETRY_DISABLED=1
 
       # Tab accepts autosuggestion if one is visible, otherwise does normal completion
       _accept_or_complete() {
