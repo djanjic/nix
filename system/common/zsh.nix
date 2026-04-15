@@ -33,6 +33,8 @@
       zle -N _accept_or_complete
       bindkey '\t' _accept_or_complete
 
+      eval "$(starship init zsh)"
+
       # Tmux session picker (skip if already in tmux or inside an IDE terminal)
       if [[ -z "$TMUX" && -z "$VSCODE_INJECTION" ]]; then
         echo "1) Attach to 'main' session"

@@ -44,6 +44,10 @@
     docker
     docker-compose
 
+    # Gnome
+    gnomeExtensions.appindicator
+    gnomeExtensions.lilypad
+
     # GUI applications
     firefox
     ghostty
@@ -63,8 +67,14 @@
 
   programs.home-manager.enable = true;
 
+  dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "lilypad@shendrew.github.io"
+      ];
       favorite-apps = [
         "firefox.desktop"
         "slack.desktop"
@@ -78,6 +88,29 @@
     };
     "org/gnome/desktop/peripherals/mouse" = {
       natural-scroll = false;
+    };
+    "org/gnome/desktop/interface".show-battery-percentage = true;
+    "org/gnome/mutter" = {
+        experimental-features = [
+          "scale-monitor-framebuffer" # Enables fractional scaling (125% 150% 175%)
+          "xwayland-native-scaling" # Scales Xwayland applications to look crisp on HiDPI screens
+          "autoclose-xwayland" # automatically terminates Xwayland if all relevant X11 clients are gone
+        ];
+      };
+  };
+
+  programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
     };
   };
 
