@@ -46,7 +46,6 @@
 
     # Gnome
     gnomeExtensions.appindicator
-    gnomeExtensions.lilypad
 
     # GUI applications
     firefox
@@ -57,6 +56,7 @@
     vscode.fhs
     zoom-us
     steam
+    dbeaver-bin
   ];
 
   home.file.".config/ghostty/config".source = ../../home-manager/dotfiles/ghostty/config;
@@ -69,17 +69,18 @@
 
   dconf.enable = true;
   dconf.settings = {
+    "org/gnome/desktop/interface".color-scheme = "prefer-dark";
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "lilypad@shendrew.github.io"
       ];
       favorite-apps = [
         "firefox.desktop"
         "slack.desktop"
         "code.desktop"
         "com.mitchellh.ghostty.desktop"
+        "dbeaver.desktop"
       ];
     };
     "org/gnome/desktop/peripherals/touchpad" = {
