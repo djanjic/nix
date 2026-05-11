@@ -46,6 +46,7 @@
 
     # Gnome
     gnomeExtensions.appindicator
+    gnomeExtensions.astra-monitor
 
     # GUI applications
     firefox
@@ -74,6 +75,7 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
+        "astra-monitor@AstraExt"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -98,6 +100,12 @@
           "autoclose-xwayland" # automatically terminates Xwayland if all relevant X11 clients are gone
         ];
       };
+    "org/gnome/shell/extensions/astra-monitor" = {
+      # Example: Customize displayed items (dconf dump /org/gnome/shell/extensions/astra-monitor/)
+      show-cpu = true;
+      show-ram = true;
+      show-gpu = false;
+    };
   };
 
   programs.starship = {
