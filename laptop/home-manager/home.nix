@@ -25,13 +25,6 @@
     direnv
     python3
 
-    # Search and navigation
-    #fd
-    #fuzzel
-    #fzf
-    #ripgrep
-    #yazi
-
     # Build tools
     gcc
 
@@ -58,6 +51,7 @@
     zoom-us
     steam
     dbeaver-bin
+    telegram-desktop
   ];
 
   home.file.".config/ghostty/config".source = ../../home-manager/dotfiles/ghostty/config;
@@ -75,7 +69,7 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "astra-monitor@AstraExt"
+        "monitor@astraext.github.io"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -104,7 +98,7 @@
       # Example: Customize displayed items (dconf dump /org/gnome/shell/extensions/astra-monitor/)
       show-cpu = true;
       show-ram = true;
-      show-gpu = false;
+      show-gpu = true;
     };
   };
 
@@ -119,7 +113,6 @@
       #   error_symbol = "[➜](bold red)";
       # };
 
-      # package.disabled = true;
     };
   };
 
