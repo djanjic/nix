@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; overlays = []; };
-in
 {
   imports = [
+    ./claude.nix
     ./git.nix
     ./neovim.nix
     ./starship.nix
@@ -45,15 +43,6 @@ in
     tree
     unzip
     zoxide
-  ] ++ [
-    (unstable.claude-code.overrideAttrs (old: rec {
-      version = "2.1.90";
-      src = pkgs.fetchurl {
-        url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
-        hash = "sha256-PLACEHOLDER";
-      };
-      npmDepsHash = "sha256-PLACEHOLDER2";
-    }))
   ];
 
   home.file.".claude/skills/humanizer".source = humanizer;

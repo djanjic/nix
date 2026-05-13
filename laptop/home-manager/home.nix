@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../home-manager/claude.nix
   #  ../../home-manager/git.nix
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
@@ -39,7 +40,10 @@
 
     # Gnome
     gnomeExtensions.appindicator
+
+    # System monitor
     gnomeExtensions.astra-monitor
+    #amdgpu_top  # AMD GPU stats backend for astra-monitor
 
     # GUI applications
     firefox
@@ -95,10 +99,10 @@
         ];
       };
     "org/gnome/shell/extensions/astra-monitor" = {
-      # Example: Customize displayed items (dconf dump /org/gnome/shell/extensions/astra-monitor/)
-      show-cpu = true;
-      show-ram = true;
-      show-gpu = true;
+      # Inspect current settings: dconf dump /org/gnome/shell/extensions/astra-monitor/
+      processor-header-show = true;
+      memory-header-show = true;
+     # gpu-header-show = true;
     };
   };
 
