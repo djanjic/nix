@@ -3,6 +3,7 @@
 {
   imports = [
     ../../home-manager/claude.nix
+    ../../home-manager/vscode.nix
   #  ../../home-manager/git.nix
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
@@ -51,7 +52,6 @@
     slack
     pwvucontrol
     _1password-gui
-    vscode.fhs
     zoom-us
     steam
     dbeaver-bin
@@ -78,7 +78,7 @@
       favorite-apps = [
         "firefox.desktop"
         "slack.desktop"
-        "code.desktop"
+        "codium.desktop"
         "com.mitchellh.ghostty.desktop"
         "dbeaver.desktop"
       ];
