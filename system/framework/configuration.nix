@@ -24,7 +24,7 @@
       RemainAfterExit = true;
     };
     script = ''
-      LIMIT=50
+      LIMIT=80
       if [ -f /etc/battery-charge-limit ]; then
         LIMIT=$(cat /etc/battery-charge-limit)
       fi
