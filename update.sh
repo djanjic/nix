@@ -62,7 +62,7 @@ echo "*** Home manager rebuild ***"
 home-manager switch
 
 echo "*** Deleting old generations ***"
-sudo nix-env --delete-generations +10
+sudo nix-env --delete-generations 30d
 
 echo "*** Garbage collecting ***"
 sudo nix-collect-garbage -d

@@ -20,6 +20,7 @@
     devenv
     direnv
     python3
+    gh
 
     # Search and navigation
     fd
