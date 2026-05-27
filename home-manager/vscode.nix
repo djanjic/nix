@@ -5,7 +5,10 @@ let
     url = "https://github.com/nix-community/nix-vscode-extensions/archive/464e8cf8572089a5b84ade70726da59b7e1c0c6f.tar.gz";
     sha256 = "12iah31dm1wwy82463p1bvsns9sayhjb5rzwlrh12kzjgj2n1i7w";
   });
-  marketplace = nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+  marketplace = nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
+  allowUnfree = ext: ext.overrideAttrs (old: {
+    meta = old.meta // { license = old.meta.license // { free = true; }; };
+  });
 in
 {
   programs.vscode = {
@@ -25,6 +28,7 @@ in
       extensions = [
         marketplace.golang.go
         marketplace.mkhl.direnv
+        (allowUnfree marketplace.ms-vscode-remote.remote-containers)
         marketplace.openfga.openfga-vscode
       ];
     };

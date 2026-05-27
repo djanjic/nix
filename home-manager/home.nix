@@ -9,7 +9,7 @@
     ./tmux.nix
   ];
 
-  home.username = "darlp";
+  home.username = "darko;
   home.homeDirectory = "/home/darko";
   home.stateVersion = "25.11";
 
@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
     # Development environments
+    devcontainer
     devenv
     direnv
     python3

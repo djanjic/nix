@@ -26,6 +26,9 @@
     devenv
     direnv
     python3
+    gh
+    devcontainer
+    gnumake
 
     # Build tools
     gcc
@@ -34,6 +37,8 @@
     k9s
     kubectx
     kubectl
+    kubelogin-oidc
+    vcluster
 
     # Containers
     docker
@@ -56,6 +61,7 @@
     steam
     dbeaver-bin
     telegram-desktop
+    joplin-desktop
   ];
 
   home.file.".config/ghostty/config".source = ../../home-manager/dotfiles/ghostty/config;
@@ -81,6 +87,7 @@
         "codium.desktop"
         "com.mitchellh.ghostty.desktop"
         "dbeaver.desktop"
+        "joplin.desktop"
       ];
     };
     "org/gnome/desktop/peripherals/touchpad" = {
