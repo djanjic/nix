@@ -18,9 +18,9 @@ ensureLink () {
 }
 
 echo "*** Setting up channels ***"
-sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos
+sudo nix-channel --add https://nixos.org/channels/nixos-26.05 nixos
 sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz home-manager
 sudo nix-channel --update
 if ! command -v home-manager &> /dev/null; then
     echo "Installing home-manager..."
@@ -59,7 +59,7 @@ echo "*** System rebuild ***"
 sudo nixos-rebuild switch
 
 echo "*** Home manager rebuild ***"
-home-manager switch
+home-manager switch -b backup
 
 echo "*** Deleting old generations ***"
 sudo nix-env --delete-generations 30d

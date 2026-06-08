@@ -11,7 +11,7 @@ let
   });
 in
 {
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
     package = pkgs.vscodium-fhs;
     profiles.default = {
@@ -21,7 +21,7 @@ in
         "claudeCode.preferredLocation" = "sidebar";
         "chat.commandCenter.enabled" = false;
         "editor.minimap.enabled" = false;
-        "workbench.colorTheme" = "Default Dark Modern";
+        "workbench.colorTheme" = "Dark Modern";
         "workbench.startupEditor" = "none";
         "workbench.welcomePage.walkthroughs.openOnInstall" = false;
       };

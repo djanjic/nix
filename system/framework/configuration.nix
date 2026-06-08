@@ -99,17 +99,8 @@
   ];
   nix.optimise.automatic = true;
 
+  # left for compatibility reasons, only channel version is updated for upgrade
   system.stateVersion = "25.11";
 
-boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_0.override {
-  argsOverride = rec {
-    version = "7.0.6";
-    modDirVersion = "7.0.6";
-    src = pkgs.fetchurl {
-      url = "mirror://kernel/linux/kernel/v7.x/linux-${version}.tar.xz";
-      sha256 = "08vm18wx6399phzgr3wz94yga3ab4fyca79445ygvbspm904996b";
-    };
-  };
-});
-
+  boot.kernelPackages = pkgs.linuxPackages_latest; 
 }

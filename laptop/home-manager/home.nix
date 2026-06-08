@@ -29,6 +29,7 @@
     gh
     devcontainer
     gnumake
+    xclip
 
     # Build tools
     gcc
