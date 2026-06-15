@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
+  claude-code = (builtins.getFlake "github:sadjow/claude-code-nix").packages.${pkgs.system}.default;
+
   statuslineScript = pkgs.writeShellApplication {
     name = "claude-statusline";
     runtimeInputs = with pkgs; [ jq git coreutils gnugrep gnused gawk ];
@@ -154,12 +156,11 @@ let
   };
 in
 {
-  home.packages = [ pkgs.claude-code ];
+  home.packages = [ claude-code ];
 
   home.file.".claude/settings.json" = {
     force = true;
     text = builtins.toJSON {
-      model = "claude-opus-4-7";
       statusLine = {
         type = "command";
         command = "${statuslineScript}/bin/claude-statusline";
@@ -168,9 +169,9 @@ in
   };
 
   home.activation.registerClaudeMcpServers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ -x ${pkgs.claude-code}/bin/claude ]; then
-      ${pkgs.claude-code}/bin/claude mcp remove --scope user gopls >/dev/null 2>&1 || true
-      ${pkgs.claude-code}/bin/claude mcp add --scope user gopls -- gopls mcp >/dev/null
+    if [ -x ${claude-code}/bin/claude ]; then
+      ${claude-code}/bin/claude mcp remove --scope user gopls >/dev/null 2>&1 || true
+      ${claude-code}/bin/claude mcp add --scope user gopls -- gopls mcp >/dev/null
     fi
   '';
 }
