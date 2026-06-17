@@ -4,6 +4,7 @@
   imports = [
     ../../home-manager/claude.nix
     ../../home-manager/vscode.nix
+    ../../home-manager/firefox.nix
   #  ../../home-manager/git.nix
   #  ../../home-manager/neovim.nix
   #  ../../home-manager/starship.nix
@@ -53,7 +54,6 @@
     #amdgpu_top  # AMD GPU stats backend for astra-monitor
 
     # GUI applications
-    firefox
     ghostty
     slack
     pwvucontrol
