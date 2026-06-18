@@ -8,7 +8,7 @@
 
   programs.firefox = {
     enable = true;
-    configPath = ".mozilla/firefox";  # keep legacy path (pre-26.05 default)
+    configPath = ".config/mozilla/firefox";
     profiles.default = {
       id = 0;
       settings = {
