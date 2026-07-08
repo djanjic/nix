@@ -16,5 +16,6 @@
   ''
     10.29.28.3 pipekit.example.com
     127.0.0.1 pipekit.local
+    127.0.0.1 k3d-registry.localhost
   '';
 }
