@@ -27,6 +27,7 @@ in
       };
       extensions = [
         marketplace.golang.go
+        marketplace.datakurre.devenv
         marketplace.mkhl.direnv
         (allowUnfree marketplace.ms-vscode-remote.remote-containers)
         marketplace.openfga.openfga-vscode
