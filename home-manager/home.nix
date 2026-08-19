@@ -9,7 +9,7 @@
     ./tmux.nix
   ];
 
-  home.username = "darko;
+  home.username = "darko";
   home.homeDirectory = "/home/darko";
   home.stateVersion = "25.11";
 

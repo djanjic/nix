@@ -51,7 +51,8 @@
 
     # System monitor
     gnomeExtensions.astra-monitor
-    #amdgpu_top  # AMD GPU stats backend for astra-monitor
+    amdgpu_top  # AMD GPU stats backend for astra-monitor
+    lm_sensors  # `sensors` CLI for CPU/GPU temps and fan RPM
 
     # GUI applications
     ghostty

@@ -154,19 +154,42 @@ let
       true
     '';
   };
+  managedSettings = pkgs.writeText "claude-settings-managed.json" (builtins.toJSON {
+    statusLine = {
+      type = "command";
+      command = "${statuslineScript}/bin/claude-statusline";
+    };
+  });
 in
 {
   home.packages = [ claude-code ];
 
-  home.file.".claude/settings.json" = {
-    force = true;
-    text = builtins.toJSON {
-      statusLine = {
-        type = "command";
-        command = "${statuslineScript}/bin/claude-statusline";
-      };
-    };
-  };
+  # settings.json is left mutable so /effort, /config etc. can write to it;
+  # the keys below are merged in on every activation and win over local values.
+  home.activation.claudeSettings = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    settings="$HOME/.claude/settings.json"
+    managed="${managedSettings}"
+
+    $DRY_RUN_CMD mkdir -p "$HOME/.claude"
+
+    if [ -L "$settings" ]; then
+      $DRY_RUN_CMD rm -f "$settings"
+    fi
+
+    current=$(cat "$settings" 2>/dev/null || true)
+    if ! printf '%s' "$current" | ${pkgs.jq}/bin/jq -e 'type == "object"' >/dev/null 2>&1; then
+      if [ -n "$current" ]; then
+        $DRY_RUN_CMD cp "$settings" "$settings.bak"
+        echo "claude: settings.json was not valid JSON, backed up to $settings.bak"
+      fi
+      current='{}'
+    fi
+
+    merged=$(mktemp)
+    printf '%s' "$current" | ${pkgs.jq}/bin/jq --slurpfile m "$managed" '. * $m[0]' > "$merged"
+    $DRY_RUN_CMD cp "$merged" "$settings"
+    rm -f "$merged"
+  '';
 
   home.activation.registerClaudeMcpServers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ -x ${claude-code}/bin/claude ]; then
